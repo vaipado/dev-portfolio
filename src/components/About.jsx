@@ -14,7 +14,7 @@ function About() {
 
                 <div className="bio">
                     <p className="subtitulo-menor">-- Introdução</p>
-                    <h1 className="subtitulo-maior">Desenvolvedor web Full-Stack Júnior</h1>
+                    <h1 className="subtitulo-maior">Desenvolvedor web Full-Stack</h1>
                     <h1 className="subtitulo-maior">Cursando Ciência da Computação</h1>
                     <p className="sobreTexto">
                         Sou viciado em programação, busco aprender coisas novas. Estou apto a dedicar horas de código para entregar soluções eficientes e de qualidade para você.
