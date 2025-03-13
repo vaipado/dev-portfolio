@@ -25,8 +25,6 @@ function Skills() {
 
     return (
         <section id="habilidades" className="skills-section">
-
-            <p className='textoFundoSkills'> Developer</p>
             <div className="divHabilidades">
                 <p className="subtitulo-menor">-- Habilidades</p>
                 <h1 className="subtitulo-maior">Tecnologias de Desenvolvimento Web</h1>

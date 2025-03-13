@@ -11,7 +11,6 @@ function App() {
     <div >
       <main>
         <div id="sobre" className='sobreMim'>
-          <p className='textFundoSobreMim'> Carlos<br />Godinho</p>
           <Header />
           <About />
         </div>
