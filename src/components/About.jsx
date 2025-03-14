@@ -8,7 +8,7 @@ function About() {
             const scrolledY = window.scrollY;
             const windowHeight = window.innerHeight;
             
-            if (scrolledY > 0.4 * windowHeight) {
+            if (scrolledY > 0.5 * windowHeight) {
                 setScrollClass(true);
             } else {
                 setScrollClass(false);

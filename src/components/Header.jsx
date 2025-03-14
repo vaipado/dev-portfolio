@@ -8,29 +8,37 @@ function Header() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-
+  
+      // Quando rolar mais de 2.5 vezes a altura da janela
       if (scrollY > 2.5 * windowHeight) {
         setActiveTab("contato");
+        setScrollClassUl("scrolled-50px");
         return;
       }
+      // Quando rolar mais de 1.7 vezes a altura da janela
       if (scrollY > 1.7 * windowHeight) {
-        setScrollClassUl("scrolled-100vh");
         setActiveTab("projetos");
+        setScrollClassUl("scrolled-50px");
         return;
       }
+      // Quando rolar mais de 0.5 vezes a altura da janela
       if (scrollY > 0.5 * windowHeight) {
         setActiveTab("habilidades");
         setScrollClassUl("scrolled-50px");
         return;
       }
-      if (scrollY > 50) {
+      if(scrollY > 50){
+        setActiveTab("home");
         setScrollClassUl("scrolled-50px");
+      }
+      // Quando estiver bem perto do topo
+      if (scrollY <= 50) {
+        setActiveTab("home");
+        setScrollClassUl("");  // Remova a classe quando o topo for atingido
         return;
       }
-      setScrollClassUl("");
-      setActiveTab("home");
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
