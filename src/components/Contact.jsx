@@ -7,7 +7,7 @@ function Contact() {
   return (
     <section id="contato" className="contact-section">
       <div className="contact-container">
-        <p className="subtitulo-menor">-- Contato</p>
+        <p className="subtitle">-- Contato</p>
         <h1 className="subtitulo-maior">Como me encontrar?</h1>
         <p className="texto-contato">Você pode conferir meus projetos no GitHub, visitar meu perfil no LinkedIn ou, se preferir, entrar em contato por e-mail. Fica a seu critério!</p>
         <div className="social-links">

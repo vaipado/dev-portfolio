@@ -1,47 +1,65 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
   const [activeTab, setActiveTab] = useState("home");
   const [scrollClassUl, setScrollClassUl] = useState("");
+  const pointRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-  
-      // Quando rolar mais de 2.5 vezes a altura da janela
+
       if (scrollY > 2.5 * windowHeight) {
         setActiveTab("contato");
         setScrollClassUl("scrolled-50px");
         return;
       }
-      // Quando rolar mais de 1.7 vezes a altura da janela
       if (scrollY > 1.7 * windowHeight) {
         setActiveTab("projetos");
         setScrollClassUl("scrolled-50px");
         return;
       }
-      // Quando rolar mais de 0.5 vezes a altura da janela
       if (scrollY > 0.5 * windowHeight) {
         setActiveTab("habilidades");
         setScrollClassUl("scrolled-50px");
         return;
       }
-      if(scrollY > 50){
+      if (scrollY > 50) {
         setActiveTab("home");
         setScrollClassUl("scrolled-50px");
       }
-      // Quando estiver bem perto do topo
       if (scrollY <= 50) {
         setActiveTab("home");
-        setScrollClassUl("");  // Remova a classe quando o topo for atingido
+        setScrollClassUl("");
         return;
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const activeLi = document.querySelector(`li.aba-ativa`);
+    const ul = document.querySelector("nav ul");
+
+    if (activeLi && pointRef.current && ul) {
+      const rect = activeLi.getBoundingClientRect();
+      const ulRect = ul.getBoundingClientRect();
+
+      const x = rect.left - ulRect.left + rect.width / 2;
+
+      gsap.to(pointRef.current, {
+        x,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    }
+  }, [activeTab]);
 
   return (
     <header>
@@ -49,20 +67,17 @@ function Header() {
         <ul className={scrollClassUl}>
           <li className={activeTab === "home" ? "aba-ativa" : ""}>
             <a href="#sobre">HOME</a>
-            <div className='point-header'></div>
           </li>
           <li className={activeTab === "habilidades" ? "aba-ativa" : ""}>
             <a href="#habilidades">HABILIDADES</a>
-            <div className='point-header'></div>
           </li>
           <li className={activeTab === "projetos" ? "aba-ativa" : ""}>
             <a href="#projetos">PROJETOS</a>
-            <div className='point-header'></div>
           </li>
           <li className={activeTab === "contato" ? "aba-ativa" : ""}>
             <a href="#contato">CONTATO</a>
-            <div className='point-header'></div>
           </li>
+          <span className="point-header" ref={pointRef}></span>
         </ul>
       </nav>
     </header>
