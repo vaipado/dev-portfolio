@@ -584,12 +584,6 @@ footer {
 
   .sobreMim {
     background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    max-height: 100vh;
-    max-width: 100vw;
     overflow: hidden;
   }
 
@@ -607,6 +601,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
   }
 
   .barraMobile {
@@ -617,6 +612,7 @@ footer {
 
   .about-section {
     height: 80vh;
+    overflow: hidden;
   }
 
   .sobreFotoNome {
