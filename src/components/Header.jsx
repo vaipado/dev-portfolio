@@ -77,7 +77,6 @@ function Header() {
           <li className={activeTab === "contato" ? "aba-ativa" : ""}>
             <a href="#contato">CONTATO</a>
           </li>
-          <span className="point-header" ref={pointRef}></span>
         </ul>
       </nav>
     </header>

@@ -11,7 +11,7 @@ function About() {
     useEffect(() => {
         ScrollTrigger.create({
             trigger: wrapperRef.current,
-            start: "top -39%",
+            start: "top -50%",
             onEnter: () => {
                 gsap.to(wrapperRef.current, {
                     x: "-150%",
@@ -45,7 +45,7 @@ function About() {
                         <h1>CARLOS<br />GODINHO</h1>
                     </div>
                 </div>
-
+                <div className="barraMobile"></div>
                 <div className="bio">
                     <div className="textoGaveta" ref={textRef}>
                         <p className="subtitle">-- Introdução</p>

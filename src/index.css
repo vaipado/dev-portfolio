@@ -168,7 +168,6 @@ h3 {
   width: 100%;
   height: 100%;
   transition: transform 0.5s ease-out;
-  position: relative;
 }
 
 .sobreFotoNome {
@@ -277,7 +276,7 @@ h3 {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1fem;
+  gap: 1em;
   justify-content: center;
   padding: 20px;
   height: 60vh;
@@ -583,74 +582,103 @@ footer {
 
 @media (max-width: 480px) {
 
-  .about-content {
+  .sobreMim {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+
+  .bio {
+    max-height: 35%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
+  }
+
+  .about-content {
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .barraMobile {
+    width: 95%;
+    height: 5px;
+    background-color: white;
   }
 
   .about-section {
-    height: auto;
+    height: 80vh;
   }
 
   .sobreFotoNome {
-    max-height: 40%;
+    max-height: 35%;
   }
 
   .profile-image img {
-    margin: 0;
-    width: 150px;
-    min-height: 150px;
-    overflow: visible;
+    width: 170px;
+    min-height: 170px;
   }
 
   .profile-nome p {
-    color: white;
     font-size: 10px;
-    line-height: 1.2;
   }
 
   .profile-nome h1 {
-    color: var(--strong-red);
     font-size: 25px;
-    font-weight: 800;
-    line-height: 1.2;
   }
 
   nav {
     & a {
-      font-size: 10px;
+      font-size: 12px;
       transition: 0.4s;
     }
   }
 
-
   header {
     width: 100%;
+    padding: 0;
+    padding: 10px 0 10px 0;
+    background-color: #1818187b;
+    backdrop-filter: blur(5px);
+    border-bottom: solid 5px rgba(255, 255, 255, 0.555);
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
 
   .textoGaveta {
-    border-top: white solid 3px;
     border-left: none;
     padding: 0;
-    padding-top: 40px;
   }
 
   .subtitulo-maior {
     font-size: 21px;
-    color: white;
   }
 
   .subtitle {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .sobreTexto {
-    word-wrap: break-word;
-    font-size: 12px;
-    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 16px;
+  }
+
+  .skillsProjects {
+    background-size: contain;
+    background-repeat: repeat;
+    overflow: hidden;
   }
 
   .divClasseHabilidades img {
@@ -669,10 +697,6 @@ footer {
 
   .divClasseHabilidades .fronted, .divClasseHabilidades .backend {
     background-color: var(--more-light-black);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     width: 43%;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
@@ -682,143 +706,146 @@ footer {
     & h4 {
       font-size: 17px;
     }
-    & p{
+
+    & p {
       font-size: 10px;
     }
   }
 
-  .divClasseHabilidades{
+  .divClasseHabilidades {
     width: 100%;
     justify-content: space-around;
     align-items: center;
   }
 
-  .skills-section{
+  .skills-section {
     width: 100vw;
   }
 
   /**/
-  .divHabilidades{
+  .divHabilidades {
     width: 95%;
     height: 30vh;
   }
-  
-.skill {
-  padding: 10px;
-  border-radius: 10px;
-}
 
-.skill-name {
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 10px;
-}
+  .skill {
+    padding: 10px;
+    border-radius: 10px;
+  }
 
-.skill-image img {
-  width: 30px;
-}
+  .skill-name {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+  }
 
-.skills-container {
-  gap: 1rem;
-}
-/**/
+  .skill-image img {
+    width: 30px;
+  }
 
-.projects-section {
-  height: 150vh;
-}
+  .skills-container {
+    gap: 1rem;
+  }
 
-.projects-assets {
-  width: 90%;
-}
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px;
-  justify-content: center;
-  align-items: start;
-  height: 95%;
-}
+  /**/
 
-.project-card {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-  height: 100%;
-  max-height: 350px;
-  transition: transform 0.3s;
-  padding: 20px;
-  margin: 0 auto;
-}
+  .projects-section {
+    height: 150vh;
+  }
+
+  .projects-assets {
+    width: 90%;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+    height: 95%;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    height: 100%;
+    max-height: 350px;
+    transition: transform 0.3s;
+    padding: 20px;
+    margin: 0 auto;
+  }
 
 
-.project-card p {
-  font-size: 10px;
-}
+  .project-card p {
+    font-size: 10px;
+  }
 
-.project-card h3{
-  font-size: 15px;
-  padding: 0;
-}
+  .project-card h3 {
+    font-size: 15px;
+    padding: 0;
+  }
 
-.project-image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  object-fit: cover;
-}
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+  }
 
-.principaisTec {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+  .principaisTec {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
 
-.principaisTec img {
-  width: 15px;
-  height: 15px;
-}
+  .principaisTec img {
+    width: 15px;
+    height: 15px;
+  }
 
-/**/
+  /**/
 
-.contact {
-  background-color: var(--more-light-black);
-  display: flex;
-  justify-content: center;
-  height: 40vh;
-}
+  .contact {
+    background-color: var(--more-light-black);
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+  }
 
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  width: 80%;
-}
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+  }
 
-.texto-contato{
-  font-size: 10px;
-  width: 100%;
-}
+  .texto-contato {
+    font-size: 10px;
+    width: 100%;
+  }
 
-.social-links {
-  display: flex;
-  width: 26%;
-  gap: 8px;
-  color: white;
-}
+  .social-links {
+    display: flex;
+    width: 26%;
+    gap: 8px;
+    color: white;
+  }
 
-.social-links img {
-  width: 10px;
-}
+  .social-links img {
+    width: 10px;
+  }
 
-.social-links .email-contact {
-  text-decoration: underline;
-  font-size: 10px;
-  line-height: 1;
-}
+  .social-links .email-contact {
+    text-decoration: underline;
+    font-size: 10px;
+    line-height: 1;
+  }
 
-footer p{
-  font-size: 10px;
-}
+  footer p {
+    font-size: 10px;
+  }
 
 }
