@@ -612,6 +612,7 @@ footer {
 
   .about-section {
     height: 80vh;
+    overflow: hidden;
   }
 
   .sobreFotoNome {
